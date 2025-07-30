@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <title>Naturslip</title>
 </head>
 <style>
@@ -146,59 +152,55 @@ body {
 </style>
 <body>
   
-  <!-- header section -->
-<header id="popping-header" class="fade-in  fixed-header fixed top-0 left-0 w-full bg-orange-500 z-50 text-black py-4 shadow-md">
-    <div class="container mx-auto flex items-center justify-between px-4">
-        <!-- Logo -->
-            <div class="flex items-center ">
-        <a href="/" class="flex items-center ">
-          <!-- logo -->
-          <h1 class="text-xl">Ngozi's <b class="text-green-500 font-bold">Naturship</b></h1>
-        </a>
+<!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-orange-600 text-white z-50 shadow-md">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      
+      <!-- Logo -->
+      <h1 class="text-xl font-bold">Ngozi’s <span class="text-yellow-300">Naturship</span></h1>
+
+      <!-- Navigation Menu (Desktop) -->
+      <nav id="nav-menu" class="hidden md:flex space-x-8">
+        <a href="#Home" class="hover:text-yellow-300">Home</a>
+        <a href="#About" class="hover:text-yellow-300">About Us</a>
+        <a href="#Mission" class="hover:text-yellow-300">Mission</a>
+        <a href="#Products" class="hover:text-yellow-300">Products</a>
+      </nav>
+
+      <!-- Order Now Button (Desktop) -->
+      <div class="hidden md:block">
+        <a href="#OrderNow" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300">Order Now</a>
       </div>
-        <!-- Mobile Menu Toggle -->
-        <div class="md:hidden">
-            <button id="menu-toggle" class="text-black focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-      <!-- Navigation Menu -->
-        <nav id="nav-menu" class="hidden md:flex space-x-8">
-            <a href="#Home" class="hover:text-yellow-300">Home</a>
-            <a href="#About Us" class="hover:text-yellow-300">About Us</a>
-            <a href="#Mission" class="hover:text-yellow-300">Mission</a>
-            <a href="#Products" class="hover:text-yellow-300">Products</a>
-        </nav>
-           <!-- Logo -->
 
-        <!-- Order Now Button -->
-        <div class="hidden md:block">
-            <a href="#" class="bg-yellow-400 text-white px-4 py-2 rounded-lg hover:bg-yellow-300">Order Now</a>
-        </div>
+      <!-- Hamburger Menu (Mobile) -->
+      <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
+        <i id="menu-icon" class="fas fa-bars"></i>
+      </button>
     </div>
-    <!-- Mobile Menu (Dropdown) -->
-    <div id="mobile-menu" class=" hidden bg-orange-600 text-white">
-        <nav class="flex flex-col items-center space-y-4 py-4">
-            <a href="#Home" class="text-black hover:text-yellow-300">Home</a>
-            <a href="#About Us" class="text-black hover:text-yellow-300">About Us</a>
-            <a href="#Mission" class="text-black hover:text-yellow-300">Mission</a>
-            <a href="#Products" class=" text-black hover:text-yellow-300">Products</a>
-            <a href="#" class="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300">Order Now</a>
-        </nav>
+  </header>
+
+  <!-- Mobile Sidebar Menu -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-orange-600 text-white z-50 shadow-lg hidden">
+    <div class="flex items-center justify-between px-4 py-4 border-b border-orange-500">
+      <h2 class="text-xl font-semibold">Ngozi’s Naturship</h2>
     </div>
-</header>
-     <section id="Home" class="fade-in  pt-24 pb-16 md:pt-32 md:pb-24 relative min-h-[600px] flex items-center">
+
+    <nav class="flex flex-col py-6 space-y-2 px-4 text-base">
+      <a href="#Home" class="flex items-center gap-3 px-3 py-2 rounded hover:text-yellow-300"> <i class="fas fa-home w-5"></i> Home </a>
+      <a href="#About Us" class="flex items-center gap-3 px-3 py-2 rounded hover:text-yellow-300"> <i class="fas fa-info-circle w-5"></i> About Us </a>
+      <a href="#Mission" class="flex items-center gap-3 px-3 py-2 rounded hover:text-yellow-300"> <i class="fas fa-bullseye w-5"></i> Mission </a>
+      <a href="#Products" class="flex items-center gap-3 px-3 py-2 rounded hover:text-yellow-300"> <i class="fas fa-box-open w-5"></i> Products </a>
+      <a href="#OrderNow" class="flex items-center gap-3 px-3 py-2 mt-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-300"> <i class="fas fa-shopping-cart w-5"></i> Order Now </a>
+    </nav>
+  </div>
+    <section id="Home" class="fade-in  pt-24 pb-16 md:pt-32 md:pb-24 relative min-h-[600px] flex items-center">
         <!-- Background Slideshow -->
-    <div class="bg-slideshow">
-      <div class="bg-slide active" style="background-image: url('./img/logo.png.jpeg');"></div>
-      <div class="bg-slide" style="background-image: url('./img/nutmilk.png');"></div>
-      <div class="bg-slide" style="background-image: url('./img/lemon.png');"></div>
-      <div class="bg-slide" style="background-image: url('./img/zobo.png');"></div>
-      <div class="bg-slide" style="background-image: url('./img/Lemon\ juice\ \(1\).jpeg');"></div>
-    </div>
-
+        <div class="bg-slideshow">
+            <div class="bg-slide active" style="background-image: url(./img/logo.png.jpeg);"></div>
+            <div class="bg-slide" style="background-image: url(./img/nutmilk.png);"></div>
+            <div class="bg-slide" style="background-image: url(./img/lemon.png);"></div>
+            <div class="bg-slide" style="background-image: url(./img/zobo.png);"></div>
+            <div class="bg-slide" style="background-image: url(./img/Lemon\ juice\ \(1\).jpeg);"></div>
             
             <!-- Overlay -->
             <div class="bg-overlay"></div>
@@ -222,6 +224,7 @@ body {
             </div>
         </div>
 
+    </section>
     </section>
     <section id="About Us" class="fade-in  bg-green-50 py-16 md:py-24 shadow-xl shadow-md shadow-lg">
         <div class="container mx-auto px-4">
@@ -590,7 +593,8 @@ body {
           </p>
         </div>
       <!-- Slideshow container -->
-      <div class="fade-in slideshow-container h-[500px] md:h-[600px]">
+      <div class="fade-in slideshow-container py-10 md:py-20">
+
         <div>
           <h2></h2>
         </div>
@@ -868,6 +872,61 @@ body {
   document.getElementById("backToTop").onclick = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  window.onscroll = function () {
+    const btn = document.getElementById("backToTop");
+    const footer = document.getElementById("pageFooter");
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const footerTop = footer.getBoundingClientRect().top + window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // If scrolled more than 300px and not at the footer
+    if (scrollTop > 300 && scrollTop + windowHeight < footerTop) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  function toggleMenu() {
+    const menu = document.getElementById("mobile-menu");
+    const icon = document.getElementById("menu-icon");
+
+    // Toggle visibility
+    menu.classList.toggle("hidden");
+
+    // Toggle icon between bars and times
+    if (menu.classList.contains("hidden")) {
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+    } else {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-times");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const navLinks = mobileMenu.querySelectorAll("a");
+
+    // Toggle icon when hamburger is clicked
+    menuToggle.addEventListener("click", () => {
+      menuIcon.classList.toggle("fa-bars");
+      menuIcon.classList.toggle("fa-times");
+    });
+
+    // Close menu when any nav link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("fa-times");
+        menuIcon.classList.add("fa-bars");
+      });
+    });
+  });
+
 
 
     </script>
