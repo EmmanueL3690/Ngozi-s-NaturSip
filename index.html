@@ -640,8 +640,8 @@ body {
         </div>
       </div>
     </section>  
-<!-- Font Awesome CDN for icon -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 
 <!-- Back to Top Button -->
 <button id="backToTop" title="Go to top">
@@ -649,7 +649,7 @@ body {
 </button>
 
 
-    <footer class="bg-gradient-to-r from-[#FFA726] to-[#4CAF50] text-white py-10 px-6 ">
+    <footer id="pageFooter" class="bg-gradient-to-r from-[#FFA726] to-[#4CAF50] text-white py-10 px-6 ">
   <div class="max-w-7xl mx-auto relative">
     
     <!-- Top Left Text -->
@@ -873,20 +873,23 @@ body {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  window.onscroll = function () {
-    const btn = document.getElementById("backToTop");
-    const footer = document.getElementById("pageFooter");
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const footerTop = footer.getBoundingClientRect().top + window.scrollY;
-    const windowHeight = window.innerHeight;
+window.onscroll = function () {
+  const btn = document.getElementById("backToTop");
+  const footer = document.getElementById("pageFooter");
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const windowHeight = window.innerHeight;
 
-    // If scrolled more than 300px and not at the footer
-    if (scrollTop > 300 && scrollTop + windowHeight < footerTop) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
+  let footerTop = Infinity;
+  if (footer) {
+    footerTop = footer.getBoundingClientRect().top + scrollTop;
+  }
+
+  if (scrollTop > 300 && scrollTop + windowHeight < footerTop) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
 
   function toggleMenu() {
     const menu = document.getElementById("mobile-menu");
